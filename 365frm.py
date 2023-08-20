@@ -379,6 +379,15 @@ def map_merkasako():
     time.sleep(0.7)
     press_h()
 
+def buscar_x():
+    for _, image_path in x.items(): # Buscar 
+        encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
+        if encontrado:
+            center = pyautogui.center(encontrado)
+            pyautogui.click(center)
+        else:
+            break
+
 try:
     with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
         if merkasako > 30:
@@ -386,10 +395,15 @@ try:
             map_merkasako()
             merkasako=0
         map_uno()
+        buscar_x()
         map_dos()
+        buscar_x()
         map_tres()
+        buscar_x()
         map_cuatro()
+        buscar_x()
         map_cinco()
+        buscar_x()
         devolverse()
         merkasako += 1
         
