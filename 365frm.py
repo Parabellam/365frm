@@ -46,8 +46,8 @@ x = {
     "x": os.path.join("imgs_programa","x.jpeg"),
 }
 
-print("5 segundos, vaya a la ventana")
-time.sleep(5)  # Esperar
+print("7 segundos, vaya a la ventana")
+time.sleep(7)  # Esperar
 
 #////////////////////////
 def map_uno():
@@ -58,7 +58,7 @@ def map_uno():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(264, 454)
-            time.sleep(7)  # Esperar
+            time.sleep(6.5)  # Esperar
         else:
             break
     ######
@@ -68,7 +68,7 @@ def map_uno():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(328, 492)
-            time.sleep(6.8)  # Esperar
+            time.sleep(6.4)  # Esperar
         else:
             break
     ######
@@ -78,7 +78,7 @@ def map_uno():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(456, 371)
-            time.sleep(6.7)  # Esperar
+            time.sleep(6.3)  # Esperar
         else:
             break
     ######
@@ -88,7 +88,7 @@ def map_uno():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(488, 347)
-            time.sleep(6.6)  # Esperar
+            time.sleep(6.2)  # Esperar
         else:
             break
     ######
@@ -98,7 +98,7 @@ def map_uno():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(693, 280)
-            time.sleep(6.5)  # Esperar
+            time.sleep(6.1)  # Esperar
         else:
             break
     ######
@@ -108,7 +108,7 @@ def map_uno():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(728, 266)
-            time.sleep(6.4)  # Esperar
+            time.sleep(6)  # Esperar
         else:
             break
     ######
@@ -118,7 +118,7 @@ def map_uno():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(809, 210)
-            time.sleep(6.3)  # Esperar
+            time.sleep(5.9)  # Esperar
         else:
             break
     ######
@@ -128,12 +128,13 @@ def map_uno():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(935, 305)
-            time.sleep(6.2)  # Esperar
+            time.sleep(6)  # Esperar
         else:
             break
     pyautogui.moveTo(1079, 180)
-    time.sleep(5.5)
+    time.sleep(0.5)
     pyautogui.click(1079, 180)
+    time.sleep(5.5)
 
 #////////////////////////
 def map_dos():
@@ -144,7 +145,7 @@ def map_dos():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(311, 349)
-            time.sleep(5.5)  # Esperar
+            time.sleep(5)  # Esperar
         else:
             break
     ######
@@ -154,7 +155,7 @@ def map_dos():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(352, 329)
-            time.sleep(5.7)  # Esperar
+            time.sleep(5.5)  # Esperar
         else:
             break
     ######
@@ -164,7 +165,7 @@ def map_dos():
         encontrado = pyautogui.locateOnScreen(image_path, confidence=0.9)
         if encontrado:
             pyautogui.click(408, 296)
-            time.sleep(6.2)  # Esperar
+            time.sleep(6.1)  # Esperar
         else:
             break
     ######
@@ -238,8 +239,9 @@ def map_dos():
         else:
             break
     pyautogui.moveTo(1101, 421)
-    time.sleep(6.5)
+    time.sleep(0.5)
     pyautogui.click(1101, 421)
+    time.sleep(6.5)
 
 #////////////////////////
 def map_tres():
@@ -305,8 +307,9 @@ def map_tres():
             break
     
     pyautogui.moveTo(826, 510)
-    time.sleep(5.5)
+    time.sleep(0.5)
     pyautogui.click(826, 510)
+    time.sleep(5.5)
 
 #////////////////////////
 def map_cuatro():
@@ -388,24 +391,28 @@ def buscar_x():
         else:
             break
 
+running = True
+timer = None
+
 try:
     with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
-        if merkasako > 30:
-            press_h()
-            map_merkasako()
-            merkasako=0
-        map_uno()
-        buscar_x()
-        map_dos()
-        buscar_x()
-        map_tres()
-        buscar_x()
-        map_cuatro()
-        buscar_x()
-        map_cinco()
-        buscar_x()
-        devolverse()
-        merkasako += 1
+        while running:
+            if merkasako > 30:
+                press_h()
+                map_merkasako()
+                merkasako=0
+            map_uno()
+            buscar_x()
+            map_dos()
+            buscar_x()
+            map_tres()
+            buscar_x()
+            map_cuatro()
+            buscar_x()
+            map_cinco()
+            buscar_x()
+            devolverse()
+            merkasako += 1
         
 except FileNotFoundError as e:
     print(f"Error de archivo no encontrado: {e}")
